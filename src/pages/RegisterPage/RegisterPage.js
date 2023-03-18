@@ -28,7 +28,7 @@ export default function RegisterPage() {
 
 		const promisse = axios.post(SIGN_UP, body);
 		promisse.then(response => navigate("/"));
-		promisse.catch(error => console.log(error));
+		promisse.catch(error => alert(error.response.data.message));
 	}
 
   return (
