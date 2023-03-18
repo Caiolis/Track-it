@@ -1,12 +1,16 @@
-import { Container, UserForm, UnderlineText } from "./styled";
-import logo from "../../assets/imgs/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { SIGN_UP } from "../../constants/urls";
 import axios from "axios";
+
+import { Container, UserForm, UnderlineText } from "./styled";
+import { ThreeDots } from 'react-loader-spinner';
+
+import { SIGN_UP } from "../../constants/urls";
+import logo from "../../assets/imgs/logo.png";
 
 export default function RegisterPage() {
 	const navigate = useNavigate();
+	const [isLoading, setIsLoading] = useState(false);
 
   // Object that contains the information of the form to be used later on the submition
   const [form, setForm] = useState({
@@ -24,11 +28,18 @@ export default function RegisterPage() {
 	// Creates the body object and send the information to the backend in order to create a new user
 	function handleSubmit(e) {
 		e.preventDefault();
+		setIsLoading(true);
 		const body = {...form};
 
 		const promisse = axios.post(SIGN_UP, body);
-		promisse.then(response => navigate("/"));
-		promisse.catch(error => alert(error.response.data.message));
+		promisse.then(response => {
+			setIsLoading(false);
+			navigate("/")
+		});
+		promisse.catch(error => {
+			setIsLoading(false);
+			alert(error.response.data.message)
+		});
 	}
 
   return (
@@ -68,7 +79,7 @@ export default function RegisterPage() {
 					value={form.image}
 					onChange={handleChange} 
 				/>
-        <button type="submit">Cadastrar</button>
+        <button type="submit" disabled={isLoading}>{isLoading ? <ThreeDots color="#fff" width='50' height='50'/> : 'Cadastrar'}</button>
       </UserForm>
 
       <Link to={"/"}>

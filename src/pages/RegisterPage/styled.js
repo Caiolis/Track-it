@@ -38,10 +38,18 @@ export const UserForm = styled.form`
 		font-size: 21px;
 		font-weight: 400;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 45px;
 		&:hover {
 			background-color: #287bb8;
+		}
+		&:disabled {
+			opacity: 0.7;
+			background-color: #52B6FF;
 		}
 	}
 `;
