@@ -1,13 +1,20 @@
-import { Container, UserForm, UnderlineText } from "./styled";
-import logo from "../../assets/imgs/logo.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { LOGIN } from "../../constants/urls";
+import { useState, useContext } from "react";
 import axios from "axios";
+
+import { Container, 
+				 UserForm, 
+				 UnderlineText 
+} from "./styled";
+
+import logo from "../../assets/imgs/logo.png";
+import { LOGIN } from "../../constants/urls";
+import { userContext } from "../../contexts/userContext"; 
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+	const context = useContext(userContext);
 
 	const navigate = useNavigate();
 
@@ -20,7 +27,10 @@ export default function LoginPage() {
 		};
 		
 		const promisse = axios.post(LOGIN, body);
-		promisse.then((response) => navigate('/habitos'));
+		promisse.then((response) => {
+			context.push(response.data)
+			navigate('/habitos')
+		});
 		promisse.catch((error) => alert(error.response.data.message));
 	}
 
