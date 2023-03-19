@@ -21,6 +21,7 @@ export const AddHabbitForm = styled.form`
 		outline: none;
 		border: 1px solid #D4D4D4;
 		border-radius: 5px;
+		color: #666666;
 		font-family: Lexend Deca;
 		font-size: 20px;
 		font-weight: 400;
@@ -46,4 +47,29 @@ export const ButtonContainer = styled.div`
 	justify-content: end;
 	gap: 20px;
 	margin-top: 30px;
+`;
+
+export const ButtonSubmit = styled.button`
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	background-color: #52B6FF;
+	color: #FFF;
+	font-family: Lexend Deca;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 84px;
+	height: 45px;
+	&:hover {
+		background-color: #287bb8;
+	}
+	&:disabled {
+		opacity: 0.7;
+		background-color: #52B6FF;
+	}
 `;

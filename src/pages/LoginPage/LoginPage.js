@@ -12,9 +12,9 @@ import { userContext } from "../../contexts/userContext";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const context = useContext(userContext);
   const [isLoading, setIsLoading] = useState(false);
 
+  const context = useContext(userContext);
   const navigate = useNavigate();
 
   // Sends a request to the server to log in the user

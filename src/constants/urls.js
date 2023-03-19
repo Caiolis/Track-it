@@ -3,3 +3,6 @@ export const SIGN_UP = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/track
 
 // Url used to login users
 export const LOGIN = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login';
+
+// Url used to register new habbits
+export const CREATE_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits';
