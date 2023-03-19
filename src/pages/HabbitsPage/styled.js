@@ -23,3 +23,11 @@ export const AddButton = styled.button`
 		background-color: #287bb8;
 	}
 `;
+
+export const LoadingContainer = styled.div`
+	width: 100%;
+	min-height: calc(100vh - 115px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
