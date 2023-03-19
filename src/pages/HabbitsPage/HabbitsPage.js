@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { userContext } from "../../contexts/userContext";
 
 import { Container, AddButton } from "./styled";
@@ -11,18 +11,20 @@ import AddHabbitCard from "../../components/AddHabbitCard/AddHabbitCard";
 import { HiPlusSm } from "react-icons/hi";
 
 export default function HabbitsPage() {
+  const [showHabbitCard, setShowHabbitCard] = useState(false);
+
   return (
     <>
       <Header />
       <BodyContainer>
         <Container>
           <PageTitle>Meus hábitos</PageTitle>
-          <AddButton>
+          <AddButton onClick={() => setShowHabbitCard(!showHabbitCard)}>
             <HiPlusSm size="30" color="#FFF" />
           </AddButton>
         </Container>
 
-				<AddHabbitCard />
+        <AddHabbitCard showHabbitCard={showHabbitCard} setShowHabbitCard={setShowHabbitCard}/>
 
         <BodyTitle>
           Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para

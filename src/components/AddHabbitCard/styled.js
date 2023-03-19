@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	width: 100%;
+	width: ${props => (props.showHabbitCard ? "100%" : "0px")};
+	height: ${props => (props.showHabbitCard ? "198px" : "0px")};
+	padding: ${props => (props.showHabbitCard ? "18px" : "0px")};
+	margin-bottom: ${props => (props.showHabbitCard ? "30px" : "0px")};
 	background-color: #FFF;
-	padding: 18px;
 	border-radius: 5px;
-	margin-bottom: 30px;
+	transition: all ease-in-out 0.3s;
+	div {
+		display: ${props => (props.showHabbitCard ? '' : "none")};
+	}
 `;
 
 export const AddHabbitForm = styled.form`
