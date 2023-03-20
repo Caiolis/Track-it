@@ -14,7 +14,21 @@ export const Container = styled.div`
 
 export const CheckButtonContainer = styled.div`
 	padding: 5px;
-	background-color: #EBEBEB;
+	background-color: ${props => props.habbitDone ? '#8FC549' : '#EBEBEB'};
 	border: 1px solid #E7E7E7;
 	border-radius: 5px;
+`;
+
+export const Title = styled.h3`
+	font-family: Lexend Deca;
+	font-size: 13px;
+	font-weight: 400;
+	color: #666666;
+	span {
+		color: ${props => props.habbitDone ? '#8FC549' : '#666'};
+	}
+`; 
+
+export const GreenTitle = styled.span`
+	color: #8fc549 !important;
 `;

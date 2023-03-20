@@ -16,3 +16,13 @@ export const DELETE_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2
 
 // Url used to get the daily habbits of the user
 export const DAILY_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today';
+
+// Url used to mark the daily habbit as done
+// After the last / add the ID
+// Concatenate with /check after the ID
+export const DONE_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/';
+
+// Url used to unmark the daily habbit as done
+// After the last / add the ID
+// Concatenate with /uncheck after the ID
+export const UNDONE_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/'

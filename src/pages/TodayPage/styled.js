@@ -11,4 +11,15 @@ export const Text = styled.h2`
 	font-size: 18px;
 	font-weight: 400;
 	color: #BABABA;
+	span {
+		color: #8FC549;
+	}
+`;
+
+export const LoadingContainer = styled.div`
+  width: 100%;
+  min-height: calc(100vh - 115px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

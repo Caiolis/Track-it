@@ -10,7 +10,7 @@ import HistoricPage from "./pages/HistoricPage/HistoricPage";
 import TodayPage from "./pages/TodayPage/TodayPage";
 
 // Contexts
-import { userContext } from "./contexts/userContext";
+import { userContext} from "./contexts/userContext";
 
 export default function App() {
   return (
