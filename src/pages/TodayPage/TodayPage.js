@@ -57,11 +57,11 @@ export default function TodayPage() {
       ) : (
         <BodyContainer>
           <MarginContainer>
-            <PageTitle>
+            <PageTitle data-test="today">
               {days[currentWeekDay].dayName}, {monthDay.$D}/
               {monthDay.$M < 10 ? "0" + (monthDay.$M + 1) : monthDay.$M + 1}
             </PageTitle>
-            <Text>
+            <Text data-test="today-counter">
               {progressContext[1].currentPercent > 0 ? (
                 <span>{progressContext[1].currentPercent}% dos hábitos concluídos</span>
               ) : (

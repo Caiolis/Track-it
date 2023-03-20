@@ -29,6 +29,7 @@ export default function DaysSelection({
   // console.log(dayID)
   return (
     <Container
+      data-test="habit-day"
       type="button"
       disabled={isLoading}
       onClick={

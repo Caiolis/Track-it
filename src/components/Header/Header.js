@@ -9,7 +9,7 @@ export default function Header() {
   const [context] = useContext(userContext);
 
   return (
-    <Container>
+    <Container data-test="header">
       <div>
         <img src={logo} alt="logo" />
       </div>

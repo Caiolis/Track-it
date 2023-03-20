@@ -46,15 +46,15 @@ export default function TodayHabbitCard({
   }
 
   return (
-    <Container>
+    <Container data-test="today-habit-container">
       <div>
-        <BodyTitle textSize={"20px"} textMargin={"0px 0px 7px 0px"}>
+        <BodyTitle textSize={"20px"} textMargin={"0px 0px 7px 0px"} data-test="today-habit-name">
           {habbitName}
         </BodyTitle>
-        <Title habbitDone={habbitDone}>
+        <Title habbitDone={habbitDone} data-test="today-habit-sequence">
           Sequência atual: <span>{habbitStreak} dias</span>
         </Title>
-        <Title>
+        <Title data-test="today-habit-record">
           Seu recorde:{" "}
           {habbitStreak == habbitRecord && habbitStreak > 0 ? (
             <GreenTitle>{habbitRecord} dias</GreenTitle>
@@ -63,7 +63,7 @@ export default function TodayHabbitCard({
           )}
         </Title>
       </div>
-      <CheckButtonContainer onClick={handleClick} habbitDone={habbitDone}>
+      <CheckButtonContainer onClick={handleClick} habbitDone={habbitDone} data-test="today-habit-check-btn">
         <BsCheckLg color="#FFF" size={50} />
       </CheckButtonContainer>
     </Container>

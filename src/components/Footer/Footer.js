@@ -45,15 +45,15 @@ export default function Footer() {
   }, [footerData]);
 
   return (
-    <Container>
+    <Container data-test="menu">
       <SubContainer textAlign={"left"}>
-        <Link to={"/habitos"}>
+        <Link to={"/habitos"} data-test="habit-link">
           <ButtonSecondary>Hábitos</ButtonSecondary>
         </Link>
       </SubContainer>
 
       <MiddleButtonContainer>
-        <Link to={"/hoje"}>
+        <Link to={"/hoje"} data-test="today-link">
           <CircularProgressbar
             value={currentProgress}
             text={"Hoje"}
@@ -71,7 +71,7 @@ export default function Footer() {
       </MiddleButtonContainer>
 
       <SubContainer textAlign={"right"}>
-        <Link to={"/historico"}>
+        <Link to={"/historico"} data-test="history-link">
           <ButtonSecondary>Histórico</ButtonSecondary>
         </Link>
       </SubContainer>

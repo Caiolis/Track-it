@@ -60,7 +60,7 @@ export default function AddHabbitCard({
   }
 
   return (
-    <Container showHabbitCard={showHabbitCard}>
+    <Container showHabbitCard={showHabbitCard} data-test="habit-create-container">
       <div>
         <AddHabbitForm onSubmit={handleSubmit}>
           <input
@@ -68,6 +68,7 @@ export default function AddHabbitCard({
             placeholder="nome do hábito"
             value={habbitName}
             onChange={(e) => setHabbitName(e.target.value)}
+            data-test="habit-name-input"
           />
 
           <DaysContainer>
@@ -85,12 +86,13 @@ export default function AddHabbitCard({
 
           <ButtonContainer>
             <CancelButton
+              data-test="habit-create-cancel-btn"
               onClick={() => setShowHabbitCard(!showHabbitCard)}
               type="button"
             >
               Cancelar
             </CancelButton>
-            <ButtonSubmit disabled={isLoading} type="submit">
+            <ButtonSubmit disabled={isLoading} type="submit" data-test="habit-create-save-btn">
               {isLoading ? (
                 <ThreeDots color="#fff" width="50" height="50" />
               ) : (

@@ -43,14 +43,14 @@ export default function HabbitCard({
   }
 
   return (
-    <Container>
-      <TitleContainer>
+    <Container data-test="habit-container">
+      <TitleContainer data-test="habit-name">
         <div>
           <BodyTitle textSize={"20px"}>{habbitName}</BodyTitle>
         </div>
 
         <div>
-          <BsTrash size={17} onClick={deleteHabbit} />
+          <BsTrash size={17} onClick={deleteHabbit} data-test="habit-delete-btn"/>
         </div>
       </TitleContainer>
 
@@ -91,6 +91,7 @@ function DaysSquares({
       clickable={clickable}
       dayIdentifier={dayIdentifier}
       selectedDay={selectedDay}
+      data-test="habit-day"
     >
       <Text selectedDay={selectedDay}>{dayName}</Text>
     </WeekDaysContainer>

@@ -48,16 +48,20 @@ export default function LoginPage() {
           placeholder="email"
           required
           value={email}
+          disabled={isLoading}
           onChange={(e) => setEmail(e.target.value)}
+          data-test="email-input"
         />
         <input
           type="password"
           placeholder="senha"
           required
           value={password}
+          disabled={isLoading}
           onChange={(e) => setPassword(e.target.value)}
+          data-test="password-input"
         />
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" disabled={isLoading} data-test="login-btn">
           {isLoading ? (
             <ThreeDots color="#fff" width="50" height="50" />
           ) : (
@@ -66,7 +70,7 @@ export default function LoginPage() {
         </button>
       </UserForm>
 
-      <Link to={"/cadastro"}>
+      <Link to={"/cadastro"} data-test="signup-link">
         <UnderlineText>Não tem uma conta? Cadastre-se!</UnderlineText>
       </Link>
     </Container>

@@ -12,7 +12,8 @@ export const Container = styled.div`
 	justify-content: space-between;
 `;
 
-export const CheckButtonContainer = styled.div`
+export const CheckButtonContainer = styled.button`
+	outline: none;
 	padding: 5px;
 	background-color: ${props => props.habbitDone ? '#8FC549' : '#EBEBEB'};
 	border: 1px solid #E7E7E7;

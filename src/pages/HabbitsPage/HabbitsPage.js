@@ -57,7 +57,7 @@ export default function HabbitsPage() {
           <>
             <Container>
               <PageTitle>Meus hábitos</PageTitle>
-              <AddButton onClick={() => setShowHabbitCard(!showHabbitCard)}>
+              <AddButton onClick={() => setShowHabbitCard(!showHabbitCard)} data-test="habit-create-btn">
                 <HiPlusSm size="30" color="#FFF" />
               </AddButton>
             </Container>
