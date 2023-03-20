@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
 	a, button, input {
 		transition: all 0.3s ease-in-out;
 	}
+
+	svg {
+		font-family: Lexend Deca !important; 
+	}
 `;

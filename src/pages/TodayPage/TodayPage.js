@@ -19,14 +19,11 @@ export default function TodayPage() {
   const [currentProgress, setCurrentProgress] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [context] = useContext(userContext);
-  const [data, setData] = useState([]);
-
   const progressContext = useContext(userContext);
+  const [data, setData] = useState([]);
 
   const currentWeekDay = dayjs().day();
   const monthDay = dayjs();
-
-  let countPercent = 0;
 
   function getAllDailyHabbits() {
     const token = context.token;
@@ -46,23 +43,10 @@ export default function TodayPage() {
   }
 
   useEffect(() => {
+    setIsLoading(true);
     getAllDailyHabbits();
   }, []);
 
-  useEffect(() => {
-    data.forEach((item) => (item.done ? countPercent++ : ""));
-    const finalPercet = Math.round((countPercent / data.length) * 100);
-    const percentObject = { currentPercent: finalPercet };
-    setCurrentProgress(finalPercet);
-
-    if (progressContext.length > 1) {
-      progressContext[1].currentPercent = finalPercet;
-    } else {
-      progressContext.push(percentObject);
-    }
-  }, [data]);
-
-  console.log(progressContext);
   return (
     <>
       <Header />
@@ -79,7 +63,7 @@ export default function TodayPage() {
             </PageTitle>
             <Text>
               {progressContext[1].currentPercent > 0 ? (
-                <span>{currentProgress}% dos hábitos concluídos</span>
+                <span>{progressContext[1].currentPercent}% dos hábitos concluídos</span>
               ) : (
                 "Nenhum hábito concluído ainda"
               )}
