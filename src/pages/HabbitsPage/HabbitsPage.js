@@ -81,6 +81,7 @@ export default function HabbitsPage() {
                   habbitDays={item.days}
                   habbitId={item.id}
                   getHabbitsData={getHabbitsData}
+                  setIsLoading={setIsLoading}
                 />
               ))
             )}

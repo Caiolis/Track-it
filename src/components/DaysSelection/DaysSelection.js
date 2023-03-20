@@ -7,7 +7,9 @@ export default function DaysSelection({
   habbitDays,
   setHabbitDays,
   dayID,
-  clickable
+  clickable,
+  isLoading,
+  selectedDays
 }) {
   const [isSelected, setIsSelected] = useState(false);
 
@@ -22,8 +24,25 @@ export default function DaysSelection({
     }
   }
 
+
+  console.log(selectedDays)
+  // console.log(dayID)
   return (
-    <Container onClick={clickable ? handleClick : () => {return }} isSelected={isSelected} clickable={clickable}>
+    <Container
+      type="button"
+      disabled={isLoading}
+      onClick={
+        clickable
+          ? handleClick
+          : () => {
+              return;
+            }
+      }
+      isSelected={isSelected}
+      clickable={clickable}
+      habbitDays={habbitDays}
+      dayID={dayID}
+    >
       <Text isSelected={isSelected}>{dayName}</Text>
     </Container>
   );
