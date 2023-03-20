@@ -10,13 +10,13 @@ export default function Header() {
 
   return (
     <Container>
-			<div>
-      	<img src={logo} alt="logo" />
-			</div>
+      <div>
+        <img src={logo} alt="logo" />
+      </div>
 
-			<ProfileContainer>
-      	<img src={context.image} alt="profile picture" />
-			</ProfileContainer>
+      <ProfileContainer>
+        <img src={context.image} alt="profile picture" />
+      </ProfileContainer>
     </Container>
   );
 }

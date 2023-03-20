@@ -4,9 +4,9 @@ import {
   DaysContainer,
   ButtonContainer,
   ButtonSubmit,
+  CancelButton,
 } from "./styled";
 import DaysSelection from "../DaysSelection/DaysSelection";
-import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 import { ThreeDots } from "react-loader-spinner";
 
 import days from "../../constants/days";
@@ -16,7 +16,11 @@ import { useState, useContext } from "react";
 import { userContext } from "../../contexts/userContext";
 import axios from "axios";
 
-export default function AddHabbitCard({ showHabbitCard, setShowHabbitCard, getHabbitsData}) {
+export default function AddHabbitCard({
+  showHabbitCard,
+  setShowHabbitCard,
+  getHabbitsData,
+}) {
   const [habbitName, setHabbitName] = useState("");
   const [habbitDays, setHabbitDays] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -77,12 +81,12 @@ export default function AddHabbitCard({ showHabbitCard, setShowHabbitCard, getHa
           </DaysContainer>
 
           <ButtonContainer>
-            <ButtonSecondary
-              showHabbitCard={showHabbitCard}
-              setShowHabbitCard={setShowHabbitCard}
+            <CancelButton
+              onClick={() => setShowHabbitCard(!showHabbitCard)}
+              type="button"
             >
               Cancelar
-            </ButtonSecondary>
+            </CancelButton>
             <ButtonSubmit disabled={isLoading} type="submit">
               {isLoading ? (
                 <ThreeDots color="#fff" width="50" height="50" />

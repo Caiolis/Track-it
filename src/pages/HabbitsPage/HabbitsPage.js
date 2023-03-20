@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { Container, AddButton, LoadingContainer } from "./styled";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import BodyContainer from "../../components/BodyContainer/BodyContainer";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import BodyTitle from "../../components/BodyTitle/BodyTitle";
@@ -86,6 +87,7 @@ export default function HabbitsPage() {
           </>
         )}
       </BodyContainer>
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,9 @@
 import { Button } from './styled';
 
-export default function ButtonSecondary({ children, setShowHabbitCard, showHabbitCard }) {
+export default function ButtonSecondary({ children }) {
+	
+
 	return (
-		<Button type='button' onClick={() => setShowHabbitCard(!showHabbitCard)}>{children}</Button>
+		<Button type='button'>{children}</Button>
 	);
 }
