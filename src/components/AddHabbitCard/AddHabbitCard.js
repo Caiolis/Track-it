@@ -1,3 +1,4 @@
+// Components
 import {
   Container,
   AddHabbitForm,
@@ -9,9 +10,11 @@ import {
 import DaysSelection from "../DaysSelection/DaysSelection";
 import { ThreeDots } from "react-loader-spinner";
 
+// Constants
 import days from "../../constants/days";
 import { CREATE_HABBIT } from "../../constants/urls";
 
+// Utils
 import { useState, useContext } from "react";
 import { userContext } from "../../contexts/userContext";
 import axios from "axios";

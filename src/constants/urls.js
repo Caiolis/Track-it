@@ -12,4 +12,7 @@ export const GET_HABBITS = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/t
 
 // Url used to delete a habbit whenever the user clicks on the delete button
 // After the last / add the ID of the habbit
-export const DELETE_HABBIT = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/`
+export const DELETE_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/';
+
+// Url used to get the daily habbits of the user
+export const DAILY_HABBIT = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today';

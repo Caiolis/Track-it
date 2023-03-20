@@ -15,9 +15,9 @@ export default function Footer() {
 			</div>
 
 			<div>
-				<Link to={'/habitos'}>
+				<Link to={'/hoje'}>
 					<ButtonSecondary>
-						Hábitos
+						Hoje
 					</ButtonSecondary>
 				</Link>
 			</div>
