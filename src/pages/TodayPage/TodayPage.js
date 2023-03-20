@@ -16,7 +16,6 @@ import * as dayjs from "dayjs";
 import axios from "axios";
 
 export default function TodayPage() {
-  const [currentProgress, setCurrentProgress] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [context] = useContext(userContext);
   const progressContext = useContext(userContext);
@@ -62,8 +61,11 @@ export default function TodayPage() {
               {monthDay.$M < 10 ? "0" + (monthDay.$M + 1) : monthDay.$M + 1}
             </PageTitle>
             <Text data-test="today-counter">
-              {progressContext[1].currentPercent > 0 ? (
-                <span>{progressContext[1].currentPercent}% dos hábitos concluídos</span>
+              {progressContext[1] != undefined &&
+              progressContext[1].currentPercent > 0 ? (
+                <span>
+                  {progressContext[1].currentPercent}% dos hábitos concluídos
+                </span>
               ) : (
                 "Nenhum hábito concluído ainda"
               )}

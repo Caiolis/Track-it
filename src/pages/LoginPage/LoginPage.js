@@ -30,7 +30,7 @@ export default function LoginPage() {
     promisse.then((response) => {
       context.push(response.data);
       setIsLoading(false);
-      navigate("/habitos");
+      navigate("/hoje");
     });
     promisse.catch((error) => {
       setIsLoading(false);
